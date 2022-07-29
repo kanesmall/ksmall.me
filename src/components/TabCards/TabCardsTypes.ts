@@ -1,12 +1,12 @@
-export type cards = {
-    logo?: string;
-    title: string;
-    desc: string;
-    link?: string;
-};
+export type Cards = {
+    logo?: string
+    title: string
+    desc: string
+    link?: string
+}
 
-export type tabs = {
-    icon: string;
-    label: string;
-    cards: cards[];
-};
+export type Tabs = {
+    icon: string
+    label: string
+    cards: Cards[]
+}

@@ -4,8 +4,8 @@
     "printWidth": 120,
     "tabWidth": 4,
     "useTabs": false,
-    "semi": true,
-    "singleQuote": false,
+    "semi": false,
+    "singleQuote": true,
     "jsxSingleQuote": false,
     "arrowParens": "always",
     "parser": "typescript"
