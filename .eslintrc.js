@@ -2,15 +2,9 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
-        jest: true,
     },
-    extends: [
-        "airbnb-typescript",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:jest/recommended",
-        "plugin:prettier/recommended",
-    ],
-    plugins: ["@typescript-eslint", "jest"],
+    extends: ["airbnb-typescript", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+    plugins: ["@typescript-eslint"],
     globals: {
         Atomics: "readonly",
         SharedArrayBuffer: "readonly",
@@ -62,12 +56,6 @@ module.exports = {
         "no-underscore-dangle": "warn",
         "@typescript-eslint/explicit-module-boundary-types": "error",
         "@typescript-eslint/no-unused-vars": "error",
-        "jest/expect-expect": [
-            "error",
-            {
-                assertFunctionNames: ["expect", "request.**.expect"],
-            },
-        ],
         "class-methods-use-this": "warn",
     },
 };
