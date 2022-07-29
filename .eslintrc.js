@@ -3,7 +3,12 @@ module.exports = {
         browser: true,
         es6: true,
     },
-    extends: ["airbnb-typescript", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+    extends: [
+        "airbnb-typescript",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "plugin:@next/next/recommended",
+    ],
     plugins: ["@typescript-eslint"],
     globals: {
         Atomics: "readonly",
