@@ -4,6 +4,8 @@ import { TabCards } from '@/src/components/TabCards'
 import { tabsData } from '@/src/components/TabCards/TabsData'
 import { Hero } from '../components/Hero'
 import { ContactForm } from '../components/ContactForm'
+import { Bullets } from '../components/Bullets'
+import { BulletsData } from '../components/Bullets/BulletsData'
 
 const Home: NextPage = () => {
     return (
@@ -19,6 +21,7 @@ const Home: NextPage = () => {
                 subtitle="A front-end web developer from the UK and I love to build things and solve problems!"
                 image="kane-android.svg"
             />
+            <Bullets title="My current day-to-day" bullets={BulletsData} />
             <TabCards title="Technologies, tools &amp; more" tabs={tabsData} />
             <ContactForm />
         </>
