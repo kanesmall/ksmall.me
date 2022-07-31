@@ -13,12 +13,14 @@ export const TabCards: React.FC<ITabCardsProps> = ({ title, tabs }) => {
 
     return (
         <div className="xl:container mx-auto py-36">
-            <h2 className="font-sans text-white font-semibold text-center text-5xl max-w-4xl mx-auto mb-8">{title}</h2>
-            <div className="flex justify-center gap-3 mb-7">
+            <h2 className="font-sans text-white font-semibold text-center text-5xl max-w-4xl mx-auto mb-9">{title}</h2>
+            <div className="flex justify-center gap-3 mb-12">
                 {tabs &&
                     tabs.map((tab) => (
                         <button
-                            className="font-sans text-white"
+                            className={`font-sans text-lg font-semibold text-white py-2 px-6 rounded-full hover:bg-[#393939] transition-colors hover:ease-in duration-200${
+                                activeTab === tab.label && ' bg-[#393939]'
+                            }`}
                             key={tab.label}
                             onClick={() => setActiveTab(tab.label)}
                         >
@@ -42,7 +44,7 @@ export const TabCards: React.FC<ITabCardsProps> = ({ title, tabs }) => {
                                                 condition={!!card.link}
                                                 wrapper={(children) => (
                                                     <a
-                                                        className="flex items-center h-full w-full bg-[#393939] p-4 sm:p-5 rounded-3xl lg:hover:-translate-y-2 transition hover:ease-in duration-200"
+                                                        className="flex items-center h-full w-full bg-[#393939] p-4 sm:p-5 rounded-3xl lg:hover:-translate-y-2 transition-transform hover:ease-in duration-200"
                                                         href={card.link}
                                                         target="_blank"
                                                     >

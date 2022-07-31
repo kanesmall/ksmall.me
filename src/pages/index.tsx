@@ -1,7 +1,9 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { TabCards } from "@/src/components/TabCards";
-import { tabsData } from "@/src/components/TabCards/TabsData";
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import { TabCards } from '@/src/components/TabCards'
+import { tabsData } from '@/src/components/TabCards/TabsData'
+import { Hero } from '../components/Hero'
+import { ContactForm } from '../components/ContactForm'
 
 const Home: NextPage = () => {
     return (
@@ -12,9 +14,15 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
+            <Hero
+                title="Hi👋, I'm Kane"
+                subtitle="A front-end web developer from the UK and I love to build things and solve problems!"
+                image="kane-android.svg"
+            />
             <TabCards title="Technologies, tools &amp; more" tabs={tabsData} />
+            <ContactForm />
         </>
-    );
-};
+    )
+}
 
-export default Home;
+export default Home
