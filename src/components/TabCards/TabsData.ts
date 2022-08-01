@@ -90,6 +90,12 @@ export const tabsData: Tabs[] = [
                 link: "https://git-scm.com/"
             },
             {
+                logo: "vercel-logo.svg",
+                title: "Vercel",
+                desc: "A platform for front-end frameworks",
+                link: "https://vercel.com/"
+            },
+            {
                 logo: "sendgrid-logo.svg",
                 title: "SendGrid",
                 desc: "Email sending service",
