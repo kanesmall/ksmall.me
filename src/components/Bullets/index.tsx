@@ -1,5 +1,5 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react"
+import Image from "next/image"
 
 interface IBulletsProps {
     title: string
@@ -8,9 +8,9 @@ interface IBulletsProps {
 
 export const Bullets: React.FC<IBulletsProps> = ({ title, bullets }) => {
     return (
-        <div className="max-w-[630px] mx-auto py-36">
-            <div className="text-center mb-16">
-                <h2 className="font-sans text-white font-semibold text-center text-5xl max-w-4xl mx-auto mb-5">
+        <section className="mx-auto max-w-[630px] py-24 sm:py-36">
+            <div className="mb-16 text-center">
+                <h2 className="mx-auto mb-5 max-w-4xl text-center font-sans text-4xl font-semibold text-white sm:text-5xl">
                     {title}
                 </h2>
             </div>
@@ -18,8 +18,8 @@ export const Bullets: React.FC<IBulletsProps> = ({ title, bullets }) => {
             <div className="flex flex-col gap-9">
                 {bullets &&
                     bullets.map((bullet) => (
-                        <div className="flex flex-col sm:flex-row items-center">
-                            <div className="relative flex-shrink-0 h-[40px] w-[40px]">
+                        <div className="flex flex-col items-center sm:flex-row">
+                            <div className="relative h-[40px] w-[40px] flex-shrink-0">
                                 <Image
                                     src="/icons/checkmark-icon.svg"
                                     alt="Checkmark icon"
@@ -27,12 +27,12 @@ export const Bullets: React.FC<IBulletsProps> = ({ title, bullets }) => {
                                     objectFit="contain"
                                 />
                             </div>
-                            <p className="font-sans text-white text-lg text-center sm:text-left ml-0 sm:ml-8 mt-4 sm:mt-0">
+                            <p className="ml-0 mt-4 text-center font-sans text-base text-white sm:ml-8 sm:mt-0 sm:text-left sm:text-lg">
                                 {bullet}
                             </p>
                         </div>
                     ))}
             </div>
-        </div>
+        </section>
     )
 }

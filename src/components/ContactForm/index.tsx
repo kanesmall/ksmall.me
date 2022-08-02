@@ -40,12 +40,12 @@ export const ContactForm: React.FC = ({}) => {
     }
 
     return (
-        <div className="mx-auto max-w-[1068px] py-36">
+        <section className="mx-auto max-w-4xl py-24 sm:py-36">
             <div className="mb-16 text-center">
-                <h2 className="mx-auto mb-5 max-w-4xl text-center font-sans text-5xl font-semibold text-white">
+                <h2 className="mx-auto mb-5 text-center font-sans text-4xl font-semibold text-white sm:text-5xl">
                     Contact Me
                 </h2>
-                <p className="font-sans text-lg text-white">
+                <p className="font-sans text-base text-white sm:text-lg">
                     Shoot me a message if you think we'd work well together or, even if you just want to chat :)
                 </p>
             </div>
@@ -95,10 +95,12 @@ export const ContactForm: React.FC = ({}) => {
                     <div className="mb-4">
                         <Image src="/icons/email-sent-icon.svg" alt="Email sent icon" height={60} width={60} />
                     </div>
-                    <p className="mb-5 font-sans text-3xl font-semibold text-white">Thanks for your message!</p>
-                    <p className="font-sans text-lg text-white">I'll get back to you as soon as I can.</p>
+                    <h3 className="mb-5 font-sans text-2xl font-semibold text-white sm:text-3xl">
+                        Thanks for your message!
+                    </h3>
+                    <p className="font-sans text-base text-white sm:text-lg">I'll get back to you as soon as I can.</p>
                 </div>
             )}
-        </div>
+        </section>
     )
 }

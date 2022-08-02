@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Tabs } from './TabCardsTypes'
-import { Card } from './Card'
+import React, { useState } from "react"
+import { Tabs } from "./TabCardsTypes"
+import { Card } from "./Card"
 
 interface ITabCardsProps {
     title: string
@@ -11,14 +11,16 @@ export const TabCards: React.FC<ITabCardsProps> = ({ title, tabs }) => {
     const [activeTab, setActiveTab] = useState<string>(tabs[0].label)
 
     return (
-        <div className="mx-auto py-36 xl:container">
-            <h2 className="mx-auto mb-9 max-w-4xl text-center font-sans text-5xl font-semibold text-white">{title}</h2>
+        <section className="mx-auto py-24 sm:py-36 xl:container">
+            <h2 className="mx-auto mb-9 max-w-4xl text-center font-sans text-4xl font-semibold text-white sm:text-5xl">
+                {title}
+            </h2>
             <div className="mb-12 flex justify-center gap-3">
                 {tabs &&
                     tabs.map((tab) => (
                         <button
                             className={`rounded-full py-2 px-6 font-sans text-lg font-semibold text-white transition-colors hover:bg-[#393939] hover:ease-in duration-200${
-                                activeTab === tab.label && ' bg-[#393939]'
+                                activeTab === tab.label && " bg-[#393939]"
                             }`}
                             key={tab.label}
                             onClick={() => setActiveTab(tab.label)}
@@ -56,6 +58,6 @@ export const TabCards: React.FC<ITabCardsProps> = ({ title, tabs }) => {
                         )}
                     </>
                 ))}
-        </div>
+        </section>
     )
 }

@@ -1,6 +1,6 @@
-import React from 'react'
-import Image from 'next/image'
-import { SocialLinks } from '../SocialLinks'
+import React from "react"
+import Image from "next/image"
+import { SocialLinks } from "../SocialLinks"
 
 interface IHeroProps {
     title: string
@@ -10,18 +10,20 @@ interface IHeroProps {
 
 export const Hero: React.FC<IHeroProps> = ({ title, subtitle, image }) => {
     return (
-        <div className="max-w-[1068px] mx-auto py-36">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-                <div className="max-w-[410px] mb-12 md:mb-0">
-                    <h1 className="font-sans text-white font-semibold text-8xl mb-6">{title}</h1>
-                    <p className="font-sans text-white text-lg mb-10">{subtitle}</p>
+        <section className="mx-auto max-w-[1068px] pt-12 pb-24 md:py-36">
+            <div className="flex flex-col-reverse items-center justify-between text-center md:flex-row md:text-left">
+                <div className="flex max-w-[410px] flex-col items-center md:items-start">
+                    <h1 className="mb-6 font-sans text-5xl font-semibold text-white sm:text-6xl lg:text-8xl">
+                        {title}
+                    </h1>
+                    <p className="mb-10 font-sans text-base text-white sm:text-lg">{subtitle}</p>
                     <SocialLinks />
                 </div>
 
-                <div className="relative max-h-[400px] max-w-[400px] h-full w-full rounded-full overflow-hidden bg-[#393939] md:ml-12">
+                <div className="relative mb-12 h-full max-h-[250px] w-full max-w-[200px] overflow-hidden rounded-full bg-[#393939] md:ml-12 md:mb-0 md:max-h-[400px] md:max-w-[400px]">
                     <Image src={`/images/${image}`} alt="Hero image" height={400} width={400} />
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
