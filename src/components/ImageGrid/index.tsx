@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export const ImageGrid: React.FC = () => {
     return (
-        <section className="mx-auto max-w-[1068px] py-24 sm:py-36">
+        <section className="mx-auto max-w-[1070px] py-24 sm:py-36">
             <div className="flex flex-col items-center justify-between gap-14 lg:flex-row">
                 <div className="grid w-full max-w-[435px] grid-cols-2 gap-9">
                     <div className="relative mt-11 aspect-[200/200] max-w-[200px] overflow-hidden rounded-3xl">
