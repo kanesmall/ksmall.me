@@ -1,9 +1,16 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import { ProjectCard } from "../components/ProjectCard"
-import { projectsData } from "@/src/components/ProjectCard/ProjectsData"
+import { ProjectCard } from "../../components/ProjectCard"
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+import { ProjectCards } from "@/src/components/ProjectCard/ProjectCardTypes"
 
-const Projects: NextPage = () => {
+interface IProjectsProps {
+    projects: ProjectCards[]
+}
+
+const Projects: NextPage<IProjectsProps> = ({ projects }) => {
     return (
         <>
             <Head>
@@ -23,11 +30,34 @@ const Projects: NextPage = () => {
                 </div>
 
                 <div className="mx-auto flex flex-col gap-24 md:max-w-[630px] lg:max-w-none">
-                    {projectsData && projectsData.map((project) => <ProjectCard card={project} />)}
+                    {projects && projects.map((project) => <ProjectCard card={project} />)}
                 </div>
             </section>
         </>
     )
+}
+
+export const getStaticProps = () => {
+    const files = fs.readdirSync(path.join("src/projects"))
+    const projects = files
+        .filter((x) => x.includes(".mdx"))
+        .map((filename) => {
+            const slug = filename.replace(".mdx", "")
+
+            const markdownWithMeta = fs.readFileSync(path.join("src/projects", filename), "utf-8")
+            const { data: frontmatter } = matter(markdownWithMeta)
+
+            return {
+                slug,
+                ...frontmatter
+            }
+        })
+
+    return {
+        props: {
+            projects
+        }
+    }
 }
 
 export default Projects

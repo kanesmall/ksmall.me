@@ -1,17 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    container: {
-      center: true
+    content: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
+    theme: {
+        container: {
+            center: true
+        },
+        extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        color: "#ffffff"
+                    }
+                }
+            }
+        },
+        fontFamily: {
+            sans: ["Fredoka", "sans-serif"]
+        }
     },
-    extend: {},
-    fontFamily: {
-      'sans': ['Fredoka', 'sans-serif']
-    }
-  },
-  plugins: [],
+    plugins: [require("@tailwindcss/typography")]
 }

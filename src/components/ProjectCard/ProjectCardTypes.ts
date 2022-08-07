@@ -1,4 +1,5 @@
 export type ProjectCards = {
+    slug: string
     title: string
     date: string
     summary: string

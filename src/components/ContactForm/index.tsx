@@ -5,9 +5,6 @@ import Image from "next/image"
 
 export const ContactForm: React.FC = ({}) => {
     const [messageCount, setMessageCount] = useState(0)
-    const [firstname, setFirstname] = useState("")
-    const [lastname, setLastname] = useState("")
-    const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
     const [showEmailSentMessage, setEmailSentMessage] = useState(false)
 
@@ -18,13 +15,15 @@ export const ContactForm: React.FC = ({}) => {
 
     const handleContactFormSubmission = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        const formData = new FormData(e.currentTarget)
+        const inputObject = Object.fromEntries(formData)
 
         const res = await fetch("/api/sendgrid", {
             body: JSON.stringify({
-                email,
-                firstname,
-                lastname,
-                message
+                email: inputObject.email,
+                firstname: inputObject.firstname,
+                lastname: inputObject.lastname,
+                message: message
             }),
             headers: {
                 "Content-Type": "application/json"
@@ -54,16 +53,16 @@ export const ContactForm: React.FC = ({}) => {
                 <form className="flex flex-col items-center gap-10" onSubmit={handleContactFormSubmission}>
                     <div className="flex w-full flex-col gap-8 md:flex-row">
                         <FormControl label="First name" required>
-                            <Input type="text" name="firstname" onChange={(e) => setFirstname(e.target.value)} />
+                            <Input type="text" name="firstname" />
                         </FormControl>
 
                         <FormControl label="Last name" required>
-                            <Input type="text" name="lastname" onChange={(e) => setLastname(e.target.value)} />
+                            <Input type="text" name="lastname" />
                         </FormControl>
                     </div>
 
                     <FormControl label="Email address" required>
-                        <Input type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
+                        <Input type="email" name="email" />
                     </FormControl>
 
                     <label className="flex w-full flex-col">
