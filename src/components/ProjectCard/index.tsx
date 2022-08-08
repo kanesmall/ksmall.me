@@ -26,7 +26,7 @@ export const ProjectCard: React.FC<IProjectCardProps> = ({ card }) => {
                         Open site
                     </a>
 
-                    <Link href={`projects/${card.slug}`}>
+                    <Link href={`${card.slug}`}>
                         <a className="cursor-pointer font-sans text-lg font-medium text-white underline hover:no-underline">
                             Read more
                         </a>

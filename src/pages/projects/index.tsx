@@ -1,10 +1,9 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import { ProjectCard } from "../../components/ProjectCard"
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
 import { ProjectCards } from "@/src/components/ProjectCard/ProjectCardTypes"
+import { compareDesc, format, parseISO } from "date-fns"
+import { allProjects } from "contentlayer/generated"
 
 interface IProjectsProps {
     projects: ProjectCards[]
@@ -38,26 +37,10 @@ const Projects: NextPage<IProjectsProps> = ({ projects }) => {
 }
 
 export const getStaticProps = () => {
-    const files = fs.readdirSync(path.join("src/projects"))
-    const projects = files
-        .filter((x) => x.includes(".mdx"))
-        .map((filename) => {
-            const slug = filename.replace(".mdx", "")
-
-            const markdownWithMeta = fs.readFileSync(path.join("src/projects", filename), "utf-8")
-            const { data: frontmatter } = matter(markdownWithMeta)
-
-            return {
-                slug,
-                ...frontmatter
-            }
-        })
-
-    return {
-        props: {
-            projects
-        }
-    }
+    const projects = allProjects.sort((a: { date: string | number | Date }, b: { date: string | number | Date }) => {
+        return compareDesc(new Date(a.date), new Date(b.date))
+    })
+    return { props: { projects } }
 }
 
 export default Projects
