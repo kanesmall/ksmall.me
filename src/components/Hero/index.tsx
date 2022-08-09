@@ -10,7 +10,7 @@ interface IHeroProps {
 
 export const Hero: React.FC<IHeroProps> = ({ title, subtitle, image }) => {
     return (
-        <section className="mx-auto max-w-[1070px] pt-12 pb-24 md:py-36">
+        <section className="mx-auto max-w-[1070px] pt-12 pb-24 md:pt-48 md:pb-36">
             <div className="flex flex-col-reverse items-center justify-between text-center md:flex-row md:text-left">
                 <div className="flex max-w-[410px] flex-col items-center md:items-start">
                     <h1 className="mb-6 font-sans text-5xl font-semibold text-white sm:text-6xl lg:text-8xl">
