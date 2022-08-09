@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+// @ts-ignore
 import Burger from "@animated-burgers/burger-squeeze"
 import "@animated-burgers/burger-squeeze/dist/styles.css"
 import { useWindowWidth } from "@react-hook/window-size"
