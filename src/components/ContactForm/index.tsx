@@ -1,12 +1,14 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { FormControl } from "./FormControl"
 import { Input } from "./Input.style"
 import Image from "next/image"
+import { PlaceholderQuotes, placeholderQuotes } from "./PlaceholderQuotes"
 
 export const ContactForm: React.FC = ({}) => {
     const [messageCount, setMessageCount] = useState(0)
     const [message, setMessage] = useState("")
     const [showEmailSentMessage, setEmailSentMessage] = useState(false)
+    const [placeholderData, setPlaceholderData] = useState<PlaceholderQuotes>()
 
     const messageCalls = (value: string) => {
         setMessageCount(value.length)
@@ -38,6 +40,12 @@ export const ContactForm: React.FC = ({}) => {
         setEmailSentMessage(true)
     }
 
+    useEffect(() => {
+        const randNum = Math.floor(Math.random() * placeholderQuotes.length)
+        console.log(randNum)
+        setPlaceholderData(placeholderQuotes[randNum])
+    }, [])
+
     return (
         <section className="mx-auto max-w-4xl py-24 sm:py-36">
             <div className="mb-16 text-center">
@@ -53,16 +61,16 @@ export const ContactForm: React.FC = ({}) => {
                 <form className="flex flex-col items-center gap-10" onSubmit={handleContactFormSubmission}>
                     <div className="flex w-full flex-col gap-8 md:flex-row">
                         <FormControl label="First name" required>
-                            <Input type="text" name="firstname" />
+                            <Input type="text" name="firstname" placeholder={placeholderData?.firstname} />
                         </FormControl>
 
                         <FormControl label="Last name" required>
-                            <Input type="text" name="lastname" />
+                            <Input type="text" name="lastname" placeholder={placeholderData?.lastname} />
                         </FormControl>
                     </div>
 
                     <FormControl label="Email address" required>
-                        <Input type="email" name="email" />
+                        <Input type="email" name="email" placeholder={placeholderData?.email} />
                     </FormControl>
 
                     <label className="flex w-full flex-col">
@@ -78,6 +86,7 @@ export const ContactForm: React.FC = ({}) => {
                             maxLength={2500}
                             onChange={(e) => messageCalls(e.target.value)}
                             required
+                            placeholder={placeholderData?.message}
                         ></textarea>
                     </label>
 
