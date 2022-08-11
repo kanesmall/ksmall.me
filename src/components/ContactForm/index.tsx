@@ -42,7 +42,6 @@ export const ContactForm: React.FC = ({}) => {
 
     useEffect(() => {
         const randNum = Math.floor(Math.random() * placeholderQuotes.length)
-        console.log(randNum)
         setPlaceholderData(placeholderQuotes[randNum])
     }, [])
 
@@ -52,7 +51,7 @@ export const ContactForm: React.FC = ({}) => {
                 <h2 className="mx-auto mb-5 text-center font-sans text-4xl font-semibold text-white sm:text-5xl">
                     Contact Me
                 </h2>
-                <p className="font-sans text-base text-white sm:text-lg">
+                <p className="font-sans text-base font-light text-white sm:text-lg">
                     Shoot me a message if you think we'd work well together or, even if you just want to chat :)
                 </p>
             </div>
@@ -81,7 +80,7 @@ export const ContactForm: React.FC = ({}) => {
                             <span className="mx-3 mt-3 font-sans text-sm text-white">{messageCount} / 2500</span>
                         </div>
                         <textarea
-                            className="max-h-[400px] min-h-[200px] rounded-2xl bg-[#393939] p-5 font-sans text-base text-white"
+                            className="max-h-[400px] min-h-[200px] rounded-2xl bg-[#393939] p-5 font-sans text-base font-light text-white placeholder:text-[#DBE2EF] placeholder:opacity-25"
                             name="firstname"
                             maxLength={2500}
                             onChange={(e) => messageCalls(e.target.value)}

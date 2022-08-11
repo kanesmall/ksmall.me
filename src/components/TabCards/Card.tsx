@@ -15,7 +15,7 @@ export const Card: React.FC<ICardProps> = ({ card }) => {
             )}
             <div>
                 <span className="mb-1 block font-sans text-lg font-semibold text-white">{card.title}</span>
-                <p className="font-sans text-xs text-[#DBE2EF]">{card.desc}</p>
+                <p className="font-sans text-sm font-light text-[#DBE2EF]">{card.desc}</p>
             </div>
         </div>
     )

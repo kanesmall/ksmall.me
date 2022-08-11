@@ -11,7 +11,7 @@ export const placeholderQuotes: PlaceholderQuotes[] = [
         lastname: "Reynolds",
         email: "malreynolds@serenity.com",
         message:
-            "Well, maybe I'm not a fancy gentleman like you, with your … very fine hat. But I do business. We're here for business."
+            "Well, maybe I'm not a fancy gentleman like you, with your... very fine hat. But I do business. We're here for business."
     },
     {
         firstname: "Harvey",
@@ -24,5 +24,11 @@ export const placeholderQuotes: PlaceholderQuotes[] = [
         lastname: "Holt",
         email: "captainraymondholt@b99.com",
         message: "Oh, I've caused a problem. I think I am getting a text message. Bloop. Ah, there it is."
+    },
+    {
+        firstname: "Jake",
+        lastname: "Peralta",
+        email: "jakeperalta@b99.com",
+        message: "Cool, cool, cool, cool, cool. No doubt, no doubt, no doubt."
     }
 ]

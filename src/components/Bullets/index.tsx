@@ -17,8 +17,8 @@ export const Bullets: React.FC<IBulletsProps> = ({ title, bullets }) => {
 
             <div className="flex flex-col gap-9">
                 {bullets &&
-                    bullets.map((bullet) => (
-                        <div className="flex flex-col items-center sm:flex-row">
+                    bullets.map((bullet, index) => (
+                        <div key={index} className="flex flex-col items-center sm:flex-row">
                             <div className="relative h-[40px] w-[40px] flex-shrink-0">
                                 <Image
                                     src="/icons/checkmark-icon.svg"
@@ -27,7 +27,7 @@ export const Bullets: React.FC<IBulletsProps> = ({ title, bullets }) => {
                                     objectFit="contain"
                                 />
                             </div>
-                            <p className="ml-0 mt-4 text-center font-sans text-base text-white sm:ml-8 sm:mt-0 sm:text-left sm:text-lg">
+                            <p className="ml-0 mt-4 text-center font-sans text-base font-normal text-white sm:ml-8 sm:mt-0 sm:text-left sm:text-lg">
                                 {bullet}
                             </p>
                         </div>

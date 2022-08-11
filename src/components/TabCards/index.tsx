@@ -30,8 +30,8 @@ export const TabCards: React.FC<ITabCardsProps> = ({ title, tabs }) => {
                     ))}
             </div>
             {tabs &&
-                tabs.map((tab, index) => (
-                    <>
+                tabs.map((tab) => (
+                    <React.Fragment key={tab.label}>
                         {activeTab === tab.label && (
                             <div className="mx-auto grid max-w-4xl grid-cols-1 justify-items-center gap-7 md:grid-cols-2">
                                 {tab.cards &&
@@ -56,7 +56,7 @@ export const TabCards: React.FC<ITabCardsProps> = ({ title, tabs }) => {
                                     ))}
                             </div>
                         )}
-                    </>
+                    </React.Fragment>
                 ))}
         </section>
     )

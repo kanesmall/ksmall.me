@@ -24,7 +24,7 @@ export const Nav: React.FC = () => {
     }, [width, isActive])
 
     return (
-        <nav className="fixed inset-x-0 top-0 z-50 mx-auto max-w-[1290px] py-6 px-6 backdrop-blur-lg transition-all lg:backdrop-blur-md">
+        <nav className="fixed inset-x-0 top-0 z-50 mx-auto max-w-[1290px] py-6 px-6 backdrop-blur-lg transition-all lg:px-0 lg:backdrop-blur-md">
             <div className="flex flex-col items-center justify-between lg:flex-row">
                 <div className="flex w-full items-center justify-between">
                     <Link href="/">
@@ -50,16 +50,16 @@ export const Nav: React.FC = () => {
                     }`}
                 >
                     <Link href="/">
-                        <a className="font-sans text-2xl font-medium text-[#F9F7F7] lg:text-base">Home</a>
+                        <a className="font-sans text-2xl font-normal text-[#F9F7F7] lg:text-base">Home</a>
                     </Link>
                     <Link href="/projects">
-                        <a className="font-sans text-2xl font-medium text-[#F9F7F7] lg:text-base">Projects</a>
+                        <a className="font-sans text-2xl font-normal text-[#F9F7F7] lg:text-base">Projects</a>
                     </Link>
                     <Link href="/about">
-                        <a className="font-sans text-2xl font-medium text-[#F9F7F7] lg:text-base">About</a>
+                        <a className="font-sans text-2xl font-normal text-[#F9F7F7] lg:text-base">About</a>
                     </Link>
                     <Link href="/contact">
-                        <a className="font-sans text-2xl font-medium text-[#F9F7F7] lg:text-base">Contact</a>
+                        <a className="font-sans text-2xl font-normal text-[#F9F7F7] lg:text-base">Contact</a>
                     </Link>
                 </div>
             </div>

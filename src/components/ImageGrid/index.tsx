@@ -43,7 +43,7 @@ export const ImageGrid: React.FC = () => {
 
                 <div className="max-w-[520px] text-center lg:text-left">
                     <h2 className="mb-6 font-sans text-4xl font-semibold text-white sm:text-5xl">About me</h2>
-                    <p className="font-sans text-base text-white sm:text-lg">
+                    <p className="font-sans text-base font-normal text-white sm:text-lg">
                         When I'm not problem-solving at a keyboard, you can often find me making my way up
                         coloured-holds on walls, enjoying the atmosphere at an eSports event or, fuelling my board game
                         addiction hobby! 👀

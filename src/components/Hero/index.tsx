@@ -16,7 +16,7 @@ export const Hero: React.FC<IHeroProps> = ({ title, subtitle, image }) => {
                     <h1 className="mb-6 font-sans text-5xl font-semibold text-white sm:text-6xl lg:text-8xl">
                         {title}
                     </h1>
-                    <p className="mb-10 font-sans text-base text-white sm:text-lg">{subtitle}</p>
+                    <p className="mb-10 font-sans text-base font-normal text-white sm:text-lg">{subtitle}</p>
                     <SocialLinks />
                 </div>
 

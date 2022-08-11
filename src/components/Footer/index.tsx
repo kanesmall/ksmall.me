@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
                         </a>
                     </Link>
 
-                    <span className="font-sans text-base font-medium text-white">Made with ❤️ by Kane Small</span>
+                    <span className="font-sans text-base font-normal text-white">Made with ❤️ by Kane Small</span>
                 </div>
 
                 <SocialLinks size="small" />
