@@ -27,7 +27,7 @@ export const Bullets: React.FC<IBulletsProps> = ({ title, bullets }) => {
                                     objectFit="contain"
                                 />
                             </div>
-                            <p className="ml-0 mt-4 text-center font-sans text-base font-normal text-white sm:ml-8 sm:mt-0 sm:text-left sm:text-lg">
+                            <p className="ml-0 mt-4 text-center font-sans text-base font-light text-white sm:ml-8 sm:mt-0 sm:text-left sm:text-lg">
                                 {bullet}
                             </p>
                         </div>
