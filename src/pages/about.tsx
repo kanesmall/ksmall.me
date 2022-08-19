@@ -23,9 +23,10 @@ const About: NextPage<IAboutProps> = ({ movies }) => {
 }
 
 export async function getStaticProps() {
-    const ids: number[] = [718930, 616037, 725201]
+    const recentlyWatchedIds: number[] = [718930, 616037, 725201]
+    const favouriteMovieIds: number[] = [284054, 27205, 286217, 157336, 62835, 640, 438631, 522627, 76341, 68726]
     const append = ["images", "release_dates"]
-    const movies = await getMovies(ids, append)
+    const movies = await getMovies(recentlyWatchedIds, append)
     return {
         props: {
             movies
