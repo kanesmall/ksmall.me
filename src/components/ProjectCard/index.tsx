@@ -17,35 +17,40 @@ export const ProjectCard: React.FC<IProjectCardProps> = ({ card }) => {
                 <span className="mb-7 text-sm text-white">{card.date}</span>
                 <p className="text-base text-white">{card.summary}</p>
                 <div className="mt-8 flex items-center gap-8 lg:mt-auto">
-                    <a
-                        className="inline-block w-auto cursor-pointer rounded-full bg-white py-3 px-10 font-sans text-lg font-semibold
-                            text-[#333646] transition-transform duration-200 hover:ease-in  lg:hover:-translate-y-2"
-                        href={card.link}
-                        target="_blank"
-                    >
-                        Open site
-                    </a>
-
                     <Link href={`${card.slug}`}>
-                        <a className="cursor-pointer font-sans text-lg font-medium text-white underline hover:no-underline">
+                        <a
+                            className="inline-block w-auto cursor-pointer rounded-full bg-white py-3 px-10 font-sans text-lg font-semibold
+                            text-[#333646] transition-transform duration-200 hover:ease-in  lg:hover:-translate-y-2"
+                        >
                             Read more
+                        </a>
+                    </Link>
+
+                    <Link href={card.link}>
+                        <a
+                            className="cursor-pointer font-sans text-lg font-medium text-white underline hover:no-underline"
+                            target="_blank"
+                        >
+                            Open site
                         </a>
                     </Link>
                 </div>
             </div>
 
             <div className="aspect-[515/444] lg:w-1/2">
-                <div className="relative h-full w-full overflow-hidden rounded-2xl">
-                    <Image
-                        src={`/images/${card.image}`}
-                        alt={`${card.title} image`}
-                        height="100%"
-                        width="100%"
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="top"
-                    />
-                </div>
+                <Link href={`${card.slug}`}>
+                    <a className="relative flex h-full w-full overflow-hidden rounded-2xl">
+                        <Image
+                            src={`/images/${card.image}`}
+                            alt={`${card.title} image`}
+                            height="100%"
+                            width="100%"
+                            layout="fill"
+                            objectFit="cover"
+                            objectPosition="top"
+                        />
+                    </a>
+                </Link>
             </div>
         </div>
     )

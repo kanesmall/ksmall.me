@@ -24,7 +24,7 @@ export const Nav: React.FC = () => {
     }, [width, isActive])
 
     return (
-        <nav className="fixed inset-x-0 top-0 z-50 mx-auto max-w-[1290px] py-6 px-6 backdrop-blur-lg transition-all lg:px-0 lg:backdrop-blur-md">
+        <nav className="fixed inset-x-0 top-0 z-10 mx-auto max-w-[1290px] py-6 px-6 backdrop-blur-lg transition-all lg:px-0 lg:backdrop-blur-md">
             <div className="flex flex-col items-center justify-between lg:flex-row">
                 <div className="flex w-full items-center justify-between">
                     <Link href="/">

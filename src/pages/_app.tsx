@@ -3,6 +3,7 @@ import type { AppProps } from "next/app"
 import { useEffect } from "react"
 import { Footer } from "@/src/components/Footer"
 import { Nav } from "../components/Nav"
+import { ModalProvider } from "../components/Modal/ModalContext"
 
 function MyApp({ Component, pageProps }: AppProps) {
     useEffect(() => {
@@ -11,9 +12,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <div className="px-6 sm:px-7">
-            <Nav />
-            <Component {...pageProps} />
-            <Footer />
+            <ModalProvider>
+                <Nav />
+                <Component {...pageProps} />
+                <Footer />
+            </ModalProvider>
         </div>
     )
 }

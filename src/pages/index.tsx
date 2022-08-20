@@ -23,8 +23,8 @@ const Home: NextPage = () => {
             </Head>
 
             <Hero
-                title="Hi👋, I'm Kane"
-                subtitle="A front-end web developer from the UK and I love to build things and solve problems!"
+                title="Hey, I'm Kane👋"
+                subtitle="A front-end web developer from the UK, who loves to tinker and build cool things, solve problems and whenever possible - eat as much 🍕 as possible!"
                 image="kane-android.svg"
             />
             <TwoColContent
