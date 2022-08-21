@@ -24,7 +24,7 @@ const Home: NextPage = () => {
 
             <Hero
                 title="Hey, I'm Kane👋"
-                subtitle="A front-end web developer from the UK, who loves to tinker and build cool things, solve problems and whenever possible - eat as much 🍕 as possible!"
+                subtitle="A front-end web developer from the UK, who loves to tinker, build cool things, solve problems and whenever possible - eat all of the 🍕!"
                 image="kane-android.svg"
             />
             <TwoColContent
