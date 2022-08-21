@@ -11,8 +11,7 @@ export const getMovies = async (movie_ids: number[], append?: string[]) => {
         let url = `${TMDB_BASE_URL}/${TMDB_VERSION}/movie/${id}?api_key=${TMDB_API_KEY}`
         if (append) url += `&append_to_response=${append.join(",")}`
         const result = await fetch(url)
-        const test = await result.json()
-        if (result.ok) results.push(test)
+        if (result.ok) results.push(await result.json())
     }
 
     return results

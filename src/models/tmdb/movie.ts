@@ -36,6 +36,20 @@ export interface ILocale {
     name: string
 }
 
+export interface IFlatRate {
+    logo_path: string
+    provider_id: number
+    provider_name: string
+}
+
+export interface IWatchProvider {
+    results: {
+        GB: {
+            flatrate: IFlatRate[]
+        }
+    }
+}
+
 // the /movie/{movie_id} endpoint adds these properties to the basic movie model
 export interface IMovieDetails extends IBasicMovie {
     belongs_to_collection: unknown
@@ -50,4 +64,5 @@ export interface IMovieDetails extends IBasicMovie {
     tagline: string
     homepage: string
     runtime: number | null
+    "watch/providers": IWatchProvider
 }

@@ -159,6 +159,18 @@ export const tabsData: Tabs[] = [
     },
     {
         icon: "",
+        label: "Resources",
+        cards: [
+            {
+                logo: "dailydev-logo.svg",
+                title: "daily.dev",
+                desc: "Curated developer news feed",
+                link: "https://daily.dev/"
+            }
+        ]
+    },
+    {
+        icon: "",
         label: "Apps",
         cards: [
             {
